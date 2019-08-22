@@ -1,4 +1,4 @@
-FROM node:8-buster
+FROM node:8
 RUN \
     apt-get update -qq \
     && apt-get install -qy \
@@ -43,6 +43,9 @@ RUN \
     lsb-release \
     xdg-utils \
     wget \
-    sbt \
     && apt-get clean
+RUN echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+RUN sudo apt-get update
+RUN sudo apt-get install sbt    
 RUN pip install awscli --upgrade
