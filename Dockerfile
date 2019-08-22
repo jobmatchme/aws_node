@@ -43,5 +43,6 @@ RUN \
     lsb-release \
     xdg-utils \
     wget \
+    sbt \
     && apt-get clean
 RUN pip install awscli --upgrade
