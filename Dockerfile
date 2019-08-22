@@ -1,4 +1,4 @@
-FROM node:8-strech
+FROM node:8-stretch
 RUN \
     apt-get update -qq \
     && apt-get install -qy \
