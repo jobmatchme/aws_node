@@ -1,4 +1,4 @@
-FROM node:8-stretch
+FROM node:8-buster
 RUN \
     apt-get update -qq \
     && apt-get install -qy \
