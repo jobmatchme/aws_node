@@ -75,3 +75,4 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B
 RUN apt-get update
 RUN apt-get install -y openjdk-8-jdk sbt    
 RUN pip install awscli --upgrade
+RUN pip install aws-sam-cli --upgrade
