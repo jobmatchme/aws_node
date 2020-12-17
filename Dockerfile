@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:dubnium
 RUN \
     apt-get update -qq \
     && apt-get install -qy \
