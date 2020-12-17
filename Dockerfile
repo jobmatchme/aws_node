@@ -54,18 +54,18 @@ RUN apt-get install -y openjdk-8-jdk sbt
 
 # Prepare SBT (warm cache)
 RUN \
-  sbt sbtVersion && \
+  sbt sbtVersion -Dsbt.rootdir=true && \
   mkdir -p project && \
   echo "sbt.version=1.2.8" > project/build.properties && \
   echo "case object Temp" > Temp.scala && \
   echo "scalaVersion := \"2.12.8\"" > build.sbt && \
-  sbt compile && \
+  sbt compile -Dsbt.rootdir=true && \
   echo "scalaVersion := \"2.12.9\"" > build.sbt && \
-  sbt compile && \
+  sbt compile -Dsbt.rootdir=true && \
   echo "scalaVersion := \"2.13.0\"" > build.sbt && \
-  sbt compile && \
+  sbt compile -Dsbt.rootdir=true && \
   echo "scalaVersion := \"2.13.1\"" > build.sbt && \
-  sbt compile && \
+  sbt compile -Dsbt.rootdir=true && \
   rm -r project && rm build.sbt && rm Temp.scala && rm -r target
 
 # Install AWS CLI
