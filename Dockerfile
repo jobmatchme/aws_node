@@ -3,6 +3,8 @@ RUN \
     apt-get update -qq \
     && apt-get install -qy \
     libelf1 \
+    python3 \
+    python3-pip \
     python-pip \
     python-dev \
     gconf-service \
