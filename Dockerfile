@@ -1,4 +1,4 @@
-FROM node:8
+FROM node:14
 RUN \
     apt-get update -qq \
     && apt-get install -qy \
